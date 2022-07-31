@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CO2 calculator</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+</head>
+
+<body>
+  <style>
+    .style_nav_bar {
+      height: 80px;
+    }
+
+    .style_sub_link {
+      color: #4e008e;
+      font-size: 16px;
+      font-weight: 200;
+      text-decoration: none;
+      font-family: "Open Sans", sans-serif;
+    }
+
+    .style_sub_link:hover {
+      color: #e1e5f4;
+    }
+
+    .style_main_dialog {
+      height: 740px;
+      background-color: #2f2859;
+      color: white;
+    }
+
+    .style_light_buttons {
+      background-color: #e1e5f4;
+      color: #2f2859;
+      font-family: "Open Sans", sans-serif;
+    }
+
+    .style_quote_section {
+      height: 360px;
+    }
+
+    .dropdown-item {
+      color: #4e008e;
+    }
+
+    .style_extra_funtion {
+      height: 450px;
+    }
+
+    .style_top_results {
+      color: #2f2859;
+    }
+
+    .style_compare {
+      background-color: #e1e5f4;
+      color: #2f2859;
+    }
+
+    .style_comparison_hover:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .explanation {
+      font-family: "Open Sans", sans-serif;
+      font-size: 16px;
+    }
+
+    #tampere_university_logo {
+      height: 65px;
+    }
+
+    #tampere_university_logo:hover {
+      cursor: pointer;
+    }
+
+    #logo {
+      font-family: "Open Sans", sans-serif;
+      font-size: 30px;
+      font-weight: 700;
+      color: #4e008e;
+    }
+
+    #quote_details {
+      font-family: "Open Sans", sans-serif;
+      font-size: 18px;
+    }
+
+    h1 {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 700;
+      font-size: 60px;
+      text-align: center;
+    }
+
+    h4 {
+      font-family: "Open Sans", sans-serif;
+      font-size: 30px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    h5 {
+      font-family: "Open Sans", sans-serif;
+      font-size: 25px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    h6 {
+      font-family: "Open Sans", sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      text-align: center;
+    }
+  </style>
+
+  <nav class="navbar navbar-light style_nav_bar">
+    <div class="container justify-content-space-between align-items-center">
+      <a class="navbar-brand" id="logo" href="index.html">CO2 CALCULATOR</a>
+      <a class="style_sub_link" href="ice_calculator.html">ICE Vehicles</a>
+      <a class="style_sub_link" href="ev_vs_ev.html">EV - EV</a>
+      <a class="style_sub_link" href="icev_vs_icev.html">ICEV - ICEV</a>
+      <a class="style_sub_link" href="icev_vs_ev.html">EV - ICEV</a>
+      <a class="style_sub_link" href="ev_calculator.html">Electric Vehicles</a>
+    </div>
+  </nav>
+
+  <div class="container-fluid style_main_dialog">
+    <div class="
+          row
+          justify-content-center
+          align-items-center
+          style_quote_section
+        ">
+      <div class="row text-center">
+        <h1>BURN LESS, SAVE MORE</h1>
+        <h3>
+          Calculate your footprint.</h3>
+        </p>
+      </div>
+    </div>
+
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-4 col-xxl-3">
+        <button type="button" class="btn w-75 style_light_buttons" onclick="location.href='ice_calculator.html'"
+          id="ice_button">
+          ICEV Calculator
+        </button>
+      </div>
+
+      <div class="col-md-4 col-xxl-3">
+        <button type="button" class="btn w-75 style_light_buttons" onclick="location.href='ev_calculator.html'"
+          id="ev_button">
+          EV Calculator
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

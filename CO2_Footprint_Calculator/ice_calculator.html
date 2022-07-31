@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ICE calculator</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+</head>
+
+<body>
+  <style>
+    .style_main_dialog {
+      font-family: "Open Sans", sans-serif;
+      background-color: #2f2859;
+      height: 750px;
+      padding: 25px;
+    }
+
+    .style_car_information_dialog {
+      background-color: #e1e5f4;
+      color: #2f2859;
+      height: 285px;
+      background-color: (194, 176, 146);
+    }
+
+    .style_trip_information_dialog {
+      background-color: #e1e5f4;
+      color: #2f2859;
+      height: 180px;
+      background-color: (194, 176, 146);
+    }
+
+    .style_result_dialog {
+      background-color: #e1e5f4;
+      color: #2f2859;
+    }
+
+    .style_quote_section {
+      height: 294px;
+      background-color: white;
+    }
+
+    .explanation {
+      font-family: "Open Sans", sans-serif;
+      font-size: 16px;
+    }
+
+    .style_extra_funtion {
+      height: 450px;
+    }
+
+    .style_top_results {
+      background-color: #e1e5f4;
+      color: #2f2859;
+    }
+
+    .style_compare {
+      background-color: #2f2859;
+      color: white;
+    }
+
+    .custom_row {
+      height: 675px;
+    }
+
+    .style_nav_bar {
+      height: 80px;
+    }
+
+    .style_sub_link {
+      color: #4e008e;
+      font-size: 16px;
+      font-weight: 200;
+      text-decoration: none;
+      font-family: "Open Sans", sans-serif;
+    }
+
+    .style_sub_link:hover {
+      color: #e1e5f4;
+    }
+
+    .style_comparison_hover:hover {
+      text-decoration: underline;
+    }
+
+    .style_additional_row {
+      height: 20px;
+    }
+
+    .results {
+      font-weight: 700;
+      font-size: 18px;
+      color: white;
+    }
+
+    .style_weather_information_dialog {
+      height: 170px;
+      background-color: #e1e5f4;
+      color: #2f2859;
+    }
+
+    .custom_row_2 {
+      height: 30px;
+    }
+
+    .weather_detail_explanation {
+      font-family: "Open Sans", sans-serif;
+      text-decoration: none;
+    }
+
+    .weather_values:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .style_dark_buttons {
+      background-color: #2f2859;
+      color: white;
+    }
+
+    .style_dark_buttons:hover {
+      background-color: #4e008e;
+    }
+
+    .modal-title {
+      color: #4e008e;
+    }
+
+    .style_traffic_flow_dialog {
+      height: 150px;
+      background-color: #e1e5f4;
+      color: #2f2859;
+    }
+
+    .dropdown-item {
+      color: #4e008e;
+    }
+
+    #tampere_university_logo {
+      height: 65px;
+    }
+
+    #tampere_university_logo:hover {
+      cursor: pointer;
+    }
+
+    #quote_details {
+      font-family: "Open Sans", sans-serif;
+      color: #4e008e;
+      font-size: 16px;
+    }
+
+    #logo {
+      font-family: "Open Sans", sans-serif;
+      font-size: 30px;
+      font-weight: 700;
+      color: #4e008e;
+    }
+
+    #total_emission_result {
+      font-weight: bold;
+    }
+
+    #carComparisonModalLabel {
+      color: #4e008e;
+    }
+
+    #reference {
+      font-family: "Open Sans", sans-serif;
+      text-decoration: none;
+      font-size: 12px;
+    }
+
+    h1 {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 700;
+      font-size: 60px;
+      color: #4e008e;
+      text-align: center;
+    }
+
+    h4 {
+      font-family: "Open Sans", sans-serif;
+      font-size: 30px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    h5 {
+      font-family: "Open Sans", sans-serif;
+      font-size: 25px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    h6 {
+      font-family: "Open Sans", sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    input {
+      color: #2f2859;
+    }
+  </style>
+
+  <nav class="navbar navbar-light style_nav_bar">
+    <div class="container justify-content-space-between align-items-center">
+      <a class="navbar-brand" id="logo" href="index.html">CO2 CALCULATOR</a>
+      <a class="style_sub_link" href="ice_calculator.html">ICE Vehicles</a>
+      <a class="style_sub_link" href="ev_vs_ev.html">EV - EV</a>
+      <a class="style_sub_link" href="icev_vs_icev.html">ICEV - ICEV</a>
+      <a class="style_sub_link" href="icev_vs_ev.html">EV - ICEV</a>
+      <a class="style_sub_link" href="ev_calculator.html">Electric Vehicles</a>
+    </div>
+  </nav>
+
+  <div class="container-fluid style_main_dialog">
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <div class="
+              row
+              style_car_information_dialog
+              align-items-center
+              justify-content-center
+            ">
+          <div class="row">
+            <div class="col-md-4 col-xl-3">
+              <label for="inputMake" class="col-form-label">Make</label>
+            </div>
+            <div class="col-md-8 col-xl-9">
+              <input type="text" list="carMakerOptions" id="inputMake" class="form-control" />
+              <datalist id="carMakerOptions"></datalist>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 col-xl-3">
+              <label for="inputModel" class="col-form-label">Model</label>
+            </div>
+            <div class="col-md-8 col-xl-9">
+              <input type="text" list="carModelOptions" id="inputModel" class="form-control" disabled />
+              <datalist id="carModelOptions"></datalist>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 col-xl-3">
+              <label for="inputVersion" class="col-form-label">Version</label>
+            </div>
+            <div class="col-md-8 col-xl-9">
+              <input type="text" list="carVersionOptions" id="inputVersion" class="form-control" disabled />
+              <datalist id="carVersionOptions"></datalist>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 col-xl-3">
+              <label for="inputYear" class="col-form-label">Year</label>
+            </div>
+            <div class="col-md-8 col-xl-9">
+              <input type="text" list="carYearOptions" id="inputYear" class="form-control" disabled />
+              <datalist id="carYearOptions"></datalist>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col text-center">
+              Traffic data provided by Traficom
+            </div>
+          </div>
+        </div>
+
+        <div class="row style_additional_row"></div>
+
+        <div class="
+              row
+              style_trip_information_dialog
+              justify-content-center
+              align-items-center
+            ">
+          <div class="row mt-2">
+            <div class="col-md-4 col-xl-3">
+              <label for="inputOrigin" class="col-form-label">Origin</label>
+            </div>
+            <div class="col-md-8 col-xl-9">
+              <input type="text" id="inputOrigin" class="form-control" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 col-xl-3">
+              <label for="inputDestination" class="col-form-label">Destination</label>
+            </div>
+            <div class="col-md-8 col-xl-9">
+              <input type="text" id="inputDestination" class="form-control" disabled />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col text-center">
+              Trip data provided by Google Maps
+            </div>
+          </div>
+        </div>
+
+        <div class="row style_additional_row"></div>
+
+        <div class="
+              row
+              style_weather_information_dialog
+              justify-content-center
+              align-items-center
+            ">
+          <div class="row text-center">
+            <p>Choose how you want to enter the temperature</p>
+          </div>
+
+          <div class="row justify-content-center align-items-center">
+            <div class="col-md-6 col-xxl-4">
+              <button type="button" class="btn w-100 style_dark_buttons" id="manualWeatherButton" data-bs-toggle="modal"
+                data-bs-target="#inputTemperature" disabled>
+                Manually
+              </button>
+            </div>
+            <div class="col-md-6 col-xxl-4">
+              <button type="button" class="btn w-100 style_dark_buttons" id="realtimeWeatherButton" disabled>
+                Real-time
+              </button>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col text-center">
+              <p id="temperatureResultText"></p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col text-center">
+              Weather data provided by AccuWeather
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="row custom_row justify-content-center align-items-center">
+          <div class="row">
+            <div class="row justify-content-center align-items-center">
+              <div class="col-md-9">
+              </div>
+
+              <div class="col-md-3">
+                <p id="average_emission_result" class="results text-center"></p>
+              </div>
+            </div>
+
+            <div class="row custom_row_2"></div>
+
+            <div class="row justify-content-center align-items-center">
+              <div class="col-md-9">
+              </div>
+
+              <div class="col-md-3">
+                <p id="trip_distance_result" class="results text-center"></p>
+                <p id="trip_duration_result" class="results text-center"></p>
+              </div>
+            </div>
+
+            <div class="row custom_row_2"></div>
+
+            <div class="row justify-content-center align-items-center">
+              <div class="col-md-9">
+              </div>
+
+              <div class="col-md-3">
+                <p id="temperature_result" class="results text-center"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-center align-items-center">
+            <button type="button" class="btn w-75 btn-light btn-sm" id="ok_button">
+              OK
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 style_result_dialog">
+        <div class="row custom_row align-items-center">
+          <div class="col">
+            <h4>RESULT</h4>
+            <p class="formula_explanation text-center">
+              Combining the datas using the formula:<br />
+              total emission = average emission * distance<br />
+            </p>
+            <div class="formula_explanation text-center weather_values" id="weatherEffects" data-bs-toggle="modal"
+              data-bs-target="#detailWeatherEffect"></div>
+            <p class="text-center" id="total_emission_result">
+              The total emission of the trip: ... grams of CO2
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="detailWeatherEffect" tabindex="-1" aria-labelledby="detailWeatherEffectTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailWeatherEffectTitle">
+            Weather Effects
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container weather_detail_explanation">
+            <p>
+              Considering the manufacturers' tests were conducted at 20
+              degrees Celsius, different temperatures affect the real-world
+              values differently [1]:
+            </p>
+            <ul>
+              <li>-7 degrees Celsius: 16% increase</li>
+              <li>0 degree Celsius: 11% increase</li>
+              <li>10 degrees Celsius: 5% increase</li>
+              <li>30 degrees Celsius: 2% decrease</li>
+            </ul>
+            <p>
+              The car users might want to use the AC if the weather outside is
+              unfavourable. While most cars uses heat from the engine to heat
+              the car in cold weather, cooling down the car in hot weather
+              requires fuel. Fuel consumption for AC usage will be considered
+              if the weather outside is greater than 20 degrees Celsius. The
+              consumption per hour increases linearly from 20 degrees to 30
+              degrees (+0.04 litres per hour for each degree rised, e.g. 0.12
+              litres per hour in 23 degrees and 0.2 litres per hour in 25
+              degrees, etc.), and stays at 0.4 litres per hour if the
+              temperature exceeds 30 degrees.
+            </p>
+            <p>
+              The program obtains the real-world temperature and decides the
+              closest data points to the result. The according effects will be
+              used in calculating the final CO2 consumption.
+            </p>
+            <p id="reference">
+              [1] Fontaras, G., Zacharof, N.-G., &amp; Ciuffo, B. (2017,
+              February 21). Fuel consumption and CO2 emissions from passenger
+              cars in Europe – Laboratory versus real-world emissions.
+              Progress in Energy and Combustion Science.
+              https://www.sciencedirect.com/science/article/pii/S0360128516300442.
+            </p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn style_dark_buttons" data-bs-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="inputTemperature" tabindex="-1" aria-labelledby="inputTemperatureLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="inputTemperatureLabel">
+            Enter Temperature
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row align-items-center justify-content-center">
+              <div class="col-auto">
+                <label for="inputTemperatureForm" class="col-form-label">Temperature</label>
+              </div>
+              <div class="col-auto">
+                <input type="text" id="inputTemperatureForm" class="form-control" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn style_dark_buttons" id="manualTemperatureOkButton" data-bs-dismiss="modal">
+            OK
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAQhxgaCaHdn0TIEGfZYn-a0mZolCZqW0&libraries=places&callback=initMap"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+  <script src="js/ice_calculator.js"></script>
+</body>
+
+</html>

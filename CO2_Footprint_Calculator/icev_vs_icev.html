@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ICEV vs ICEV</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+</head>
+
+<body>
+  <style>
+    .style_nav_bar {
+      height: 80px;
+    }
+
+    .style_sub_link {
+      color: #4e008e;
+      font-size: 16px;
+      font-weight: 200;
+      text-decoration: none;
+      font-family: "Open Sans", sans-serif;
+    }
+
+    .style_sub_link:hover {
+      color: #e1e5f4;
+    }
+
+    .dropdown-item {
+      color: #4e008e;
+    }
+
+    .style_custom_row_1 {
+      height: 30px;
+    }
+
+    .style_custom_row_2 {
+      height: 200px;
+    }
+
+    .style_custom_row_3 {
+      height: 100px;
+    }
+
+    .style_custom_row_4 {
+      height: 80px;
+    }
+
+    .style_main_dialog {
+      background-color: #2f2859;
+      height: 540px;
+      color: white;
+      font-size: 18px;
+      font-family: "Open Sans", sans-serif;
+    }
+
+    .style_result_dialog {
+      background-color: #e1e5f4;
+      color: #2f2859;
+      font-size: 18px;
+      font-family: "Open Sans", sans-serif;
+    }
+
+    .style_dark_buttons {
+      background-color: #2f2859;
+      color: white;
+    }
+
+    .style_dark_buttons:hover {
+      background-color: #4e008e;
+      color: white;
+    }
+
+    #tampere_university_logo {
+      height: 65px;
+    }
+
+    #tampere_university_logo:hover {
+      cursor: pointer;
+    }
+
+    #logo {
+      font-family: "Open Sans", sans-serif;
+      font-size: 30px;
+      font-weight: 700;
+      color: #4e008e;
+    }
+  </style>
+
+  <nav class="navbar navbar-light style_nav_bar">
+    <div class="container justify-content-space-between align-items-center">
+      <a class="navbar-brand" id="logo" href="index.html">CO2 CALCULATOR</a>
+      <a class="style_sub_link" href="ice_calculator.html">ICE Vehicles</a>
+      <a class="style_sub_link" href="ev_vs_ev.html">EV - EV</a>
+      <a class="style_sub_link" href="icev_vs_icev.html">ICEV - ICEV</a>
+      <a class="style_sub_link" href="icev_vs_ev.html">EV - ICEV</a>
+      <a class="style_sub_link" href="ev_calculator.html">Electric Vehicles</a>
+    </div>
+  </nav>
+
+  <div class="container-fluid style_main_dialog">
+    <div class="row style_custom_row_1"></div>
+
+    <div class="row justify-content-center align-items-center style_custom_row_2">
+      <div class="col-md-5">
+        <div class="row">
+          <div class="col-md-4 col-xl-3">
+            <label for="input_make_1" class="col-form-label">Make</label>
+          </div>
+          <div class="col-md-8 col-xl-9">
+            <input type="text" list="car_make_options_1" id="input_make_1" class="form-control" />
+            <datalist id="car_make_options_1"></datalist>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 col-xl-3">
+            <label for="input_model_1" class="col-form-label">Model</label>
+          </div>
+          <div class="col-md-8 col-xl-9">
+            <input type="text" list="car_model_options_1" id="input_model_1" class="form-control" disabled />
+            <datalist id="car_model_options_1"></datalist>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 col-xl-3">
+            <label for="input_version_1" class="col-form-label">Version</label>
+          </div>
+          <div class="col-md-8 col-xl-9">
+            <input type="text" list="car_version_options_1" id="input_version_1" class="form-control" disabled />
+            <datalist id="car_version_options_1"></datalist>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 col-xl-3">
+            <label for="input_year_1" class="col-form-label">Year</label>
+          </div>
+          <div class="col-md-8 col-xl-9">
+            <input type="text" list="car_year_options_1" id="input_year_1" class="form-control" disabled />
+            <datalist id="car_year_options_1"></datalist>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-5">
+        <div class="row">
+          <div class="col-md-4 col-xl-3">
+            <label for="input_make_2" class="col-form-label">Make</label>
+          </div>
+          <div class="col-md-8 col-xl-9">
+            <input type="text" list="car_make_options_2" id="input_make_2" class="form-control" />
+            <datalist id="car_make_options_2"></datalist>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 col-xl-3">
+            <label for="input_model_2" class="col-form-label">Model</label>
+          </div>
+          <div class="col-md-8 col-xl-9">
+            <input type="text" list="car_model_options_2" id="input_model_2" class="form-control" disabled />
+            <datalist id="car_model_options_2"></datalist>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 col-xl-3">
+            <label for="input_version_2" class="col-form-label">Version</label>
+          </div>
+          <div class="col-md-8 col-xl-9">
+            <input type="text" list="car_version_options_2" id="input_version_2" class="form-control" disabled />
+            <datalist id="car_version_options_2"></datalist>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 col-xl-3">
+            <label for="input_year_2" class="col-form-label">Year</label>
+          </div>
+          <div class="col-md-8 col-xl-9">
+            <input type="text" list="car_year_options_2" id="input_year_2" class="form-control" disabled />
+            <datalist id="car_year_options_2"></datalist>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row style_custom_row_1"></div>
+
+    <div class="row justify-content-center align-items-center style_custom_row_3">
+      <div class="col-md-5">
+        <div class="row">
+          <div class="col-md-3">
+            <label for="input_origin_1" class="col-form-label">Origin</label>
+          </div>
+          <div class="col-md-9">
+            <input type="text" id="input_origin_1" class="form-control" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3">
+            <label for="input_destination_1" class="col-form-label">Destination</label>
+          </div>
+          <div class="col-md-9">
+            <input type="text" id="input_destination_1" class="form-control" disabled />
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-5">
+        <div class="row">
+          <div class="col-md-3">
+            <label for="input_origin_2" class="col-form-label">Origin</label>
+          </div>
+          <div class="col-md-9">
+            <input type="text" id="input_origin_2" class="form-control" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3">
+            <label for="input_destination_2" class="col-form-label">Destination</label>
+          </div>
+          <div class="col-md-9">
+            <input type="text" id="input_destination_2" class="form-control" disabled />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row style_custom_row_1"></div>
+
+    <div class="row justify-content-center align-items-center style_custom_row_4">
+      <div class="col-md-5 text-center">
+      </div>
+
+      <div class="col-md-5 text-center">
+      </div>
+    </div>
+  </div>
+
+  <div class="container_fluid style_result_dialog">
+    <div class="row style_custom_row_1"></div>
+
+    <div class="row justify-content-center align-items-center style_custom_row_3">
+      <div class="col-md-5 text-center">
+        <div id="average_emission_1">Average Emission</div>
+        <div id="distance_1">Distance</div>
+        <div id="travel_time_1">Travel time</div>
+        <div id="emission_1">Emission</div>
+      </div>
+      <div class="col-md-5 text-center">
+        <div id="average_emission_2">Average Emission</div>
+        <div id="distance_2">Distance</div>
+        <div id="travel_time_2">Travel time</div>
+        <div id="emission_2">Emission</div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-2 justify-content-center align-items-center">
+        <button type="button" class="btn w-100 style_dark_buttons" id="ok_button">
+          OK
+        </button>
+      </div>
+    </div>
+
+    <div class="row style_custom_row_1"></div>
+  </div>
+
+  <script src="js/icev_vs_icev.js"></script>
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAQhxgaCaHdn0TIEGfZYn-a0mZolCZqW0&libraries=places&callback=initMap"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
